@@ -1,0 +1,37 @@
+﻿@page
+@model EmployeeAttendanceApplication.Pages.RoleModel
+@{
+}
+
+<h2>Create A New Role</h2>
+
+<br />
+
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1 class="mb-3">Create Role</h1>
+
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Role.RoleName">Role Name</label>
+                    <input asp-for="Role.RoleName" class="form-control" type="text" required />
+                    <span asp-validation-for="Role.RoleName" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

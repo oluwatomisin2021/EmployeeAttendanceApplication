@@ -1,0 +1,52 @@
+﻿@page "{id:int}"
+@model EmployeeAttendanceApplication.Pages.EmployeePage.IndexModel
+
+<h3 class="text-info">Welcome to your page, @Model.Employee.FirstName</h3>
+<br />
+
+<div class="col-12 border p-3 mt-3">
+    <form method="post">
+        <input type="hidden" asp-for="Employee.Id" />
+
+        <table class="table table-striped border">
+            <tr>
+                <th>
+                    <label asp-for="Employee.FirstName">First Name</label>
+                </th>
+                <th>
+                    <label asp-for="Employee.LastName">Last Name</label>
+                </th>
+                <th>
+                    <label asp-for="Employee.PhoneNumber">Phone number</label>
+                </th>
+                <th>
+                    <label asp-for="Employee.Email">Email</label>
+                </th>
+                <th>
+                    <label asp-for="Employee.Address">Address</label>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <label>@Html.DisplayFor(e => e.Employee.FirstName)</label>
+                </td>
+                <td>
+                    <label>@Html.DisplayFor(e => e.Employee.LastName)</label>
+                </td>
+                <td>
+                    <label>@Html.DisplayFor(e => e.Employee.PhoneNumber)</label>
+                </td>
+                <td>
+                    <label>@Html.DisplayFor(e => e.Employee.Email)</label>
+                </td>
+                <td>
+                    <label>@Html.DisplayFor(e => e.Employee.Address)</label>
+                </td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@Model.Employee.Id" class="btn btn-success btn-sm text-white">Edit</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
